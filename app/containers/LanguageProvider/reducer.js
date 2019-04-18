@@ -5,10 +5,9 @@
  */
 
 import { CHANGE_LOCALE } from './constants';
-import { DEFAULT_LOCALE } from '../../i18n'; // eslint-disable-line
 
 export const initialState = {
-  locale: DEFAULT_LOCALE,
+  locale: 'en',
 };
 
 function languageProviderReducer(state = initialState, action) {

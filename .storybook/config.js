@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import LanguageProvider from '../app/containers/LanguageProvider';
 import createHistory from 'history/createBrowserHistory';
 import configureStore from '../app/configureStore';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const history = createHistory();
 const store = configureStore({}, history);
