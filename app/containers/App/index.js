@@ -1,28 +1,32 @@
 /**
  *
- * App.js
- *
- * This component is the skeleton around the actual pages, and should only
- * contain code that should be seen on all pages. (e.g. navigation bar)
+ * App
  *
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { FormattedHTMLMessage } from 'react-intl';
+import messages from './messages';
+import * as apiCalls from './apiCalls';
+import connectApiCalls from 'utils/helperFunctions/connectApiCalls';
 
-import HomePage from 'containers/HomePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
+const container = 'app';
 
-import GlobalStyle from '../../global-styles';
-
-export default function App() {
+export const App = props => {
+  console.log(props);
   return (
     <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-      <GlobalStyle />
+      <FormattedHTMLMessage {...messages.header} />
     </div>
   );
-}
+};
+
+App.propTypes = {
+  getConfig: PropTypes.object.isRequired,
+};
+
+export default connectApiCalls({
+  container,
+  apiCalls,
+})(App);

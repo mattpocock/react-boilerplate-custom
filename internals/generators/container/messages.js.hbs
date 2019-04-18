@@ -1,16 +1,14 @@
 /*
- * {{ properCase name }} Messages
+ * {{properCase name }} Messages
  *
- * This contains all the text for the {{ properCase name }} container.
+ * This contains all the text for the {{properCase name }} component.
  */
 
 import { defineMessages } from 'react-intl';
 
-export const scope = 'app.containers.{{ properCase name }}';
-
 export default defineMessages({
   header: {
-    id: `${scope}.header`,
-    defaultMessage: 'This is the {{ properCase name }} container!',
+    id: 'app.containers.{{properCase name }}.header',
+    defaultMessage: 'This is {{properCase name}} container !',
   },
 });
